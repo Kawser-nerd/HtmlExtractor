@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Test Case of Html Page</title>
+</head>
+<body>
+<div class="section" id="cv-namespace">
+<h3><tt class="docutils literal"><span class="pre">cv</span></tt> Namespace<a class="headerlink" href="#cv-namespace" title="Permalink to this headline">¶</a></h3>
+<p>All the OpenCV classes and functions are placed into the <tt class="docutils literal"><span class="pre">cv</span></tt> namespace. Therefore, to access this functionality from your code, use the <tt class="docutils literal"><span class="pre">cv::</span></tt> specifier or <tt class="docutils literal"><span class="pre">using</span> <span class="pre">namespace</span> <span class="pre">cv;</span></tt> directive:</p>
+<div class="highlight-c"><div class="highlight"><pre><span class="cp">#include "opencv2/core.hpp"</span>
+<span class="p">...</span>
+<span class="n">cv</span><span class="o">::</span><span class="n">Mat</span> <span class="n">H</span> <span class="o">=</span> <span class="n">cv</span><span class="o">::</span><span class="n">findHomography</span><span class="p">(</span><span class="n">points1</span><span class="p">,</span> <span class="n">points2</span><span class="p">,</span> <span class="n">CV_RANSAC</span><span class="p">,</span> <span class="mi">5</span><span class="p">);</span>
+<span class="p">...</span>
+</pre></div>
+</div>
+<p>or</p>
+<div class="highlight-cpp"><div class="highlight"><pre><span class="cp">#include "opencv2/core.hpp"</span>
+<span class="k">using</span> <span class="k">namespace</span> <span class="n">cv</span><span class="p">;</span>
+<span class="p">...</span>
+<span class="n">Mat</span> <span class="n">H</span> <span class="o">=</span> <span class="n">findHomography</span><span class="p">(</span><span class="n">points1</span><span class="p">,</span> <span class="n">points2</span><span class="p">,</span> <span class="n">CV_RANSAC</span><span class="p">,</span> <span class="mi">5</span> <span class="p">);</span>
+<span class="p">...</span>
+</pre></div>
+</div>
+<p>Some of the current or future OpenCV external names may conflict with STL
+or other libraries. In this case, use explicit namespace specifiers to resolve the name conflicts:</p>
+<div class="highlight-cpp"><div class="highlight"><pre><span class="n">Mat</span> <span class="nf">a</span><span class="p">(</span><span class="mi">100</span><span class="p">,</span> <span class="mi">100</span><span class="p">,</span> <span class="n">CV_32F</span><span class="p">);</span>
+<span class="n">randu</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">Scalar</span><span class="o">::</span><span class="n">all</span><span class="p">(</span><span class="mi">1</span><span class="p">),</span> <span class="n">Scalar</span><span class="o">::</span><span class="n">all</span><span class="p">(</span><span class="n">std</span><span class="o">::</span><span class="n">rand</span><span class="p">()));</span>
+<span class="n">cv</span><span class="o">::</span><span class="n">log</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">a</span><span class="p">);</span>
+<span class="n">a</span> <span class="o">/=</span> <span class="n">std</span><span class="o">::</span><span class="n">log</span><span class="p">(</span><span class="mf">2.</span><span class="p">);</span>
+</pre></div>
+</div>
+</div>
+</body>
+</html>

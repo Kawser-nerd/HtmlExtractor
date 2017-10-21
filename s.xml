@@ -1,0 +1,1 @@
+<s><!--Extracted Function Document fors--><cv-namespace>All the OpenCV classes and functions are placed into thecvnamespace. Therefore, to access this functionality from your code, use thecv::specifier orusingnamespacecv;directive:</cv-namespace></s>
